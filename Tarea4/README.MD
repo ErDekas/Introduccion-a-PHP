@@ -63,5 +63,3 @@ Debes implementar la funcionalidad de cada una de las opciones del menú. Para e
 La opción de mostrar por pantalla los datos de un monstruo (8) lo hará mostrando uno a uno el valor de cada atributo recogido con el método "get" correspondiente, junto a un texto que indique de qué valor se trata y utilizando el método `__toString()`.
 
 Naturalmente, tras realizar cualquiera de las opciones de la 1 a la 8, el menú debe volverse a mostrar, permitiendo elegir una nueva opción, hasta que se introduzca la opción 0 para salir. Cuando esto ocurra, se mostrarán por pantalla los valores de los atributos de clase.
-
-Incluye comentarios Javadoc para que sea posible generar de forma totalmente automática una documentación completa de la clase `Monstruo`.

@@ -1,9 +1,4 @@
 <?php
-/**
- * Clase Monstruo
- * 
- * Clase que representa un monstruo con atributos como nombre, posición en la pantalla, color y estado de vida.
- */
 class Monstruo {
     public const MIN_POSICION_X = 0;
     public const MAX_POSICION_X = 80;
@@ -18,15 +13,6 @@ class Monstruo {
     private $posicionY;
     private $color;
     private $vivo;
-
-    /**
-     * Constructor con parámetros
-     *
-     * @param string $nombre
-     * @param int $posicionX
-     * @param int $posicionY
-     * @param string $color
-     */
     public function __construct($nombre = "Sin nombre", $posicionX = 0, $posicionY = 0, $color = "rojo") {
         $this->nombre = $nombre;
         $this->posicionX = $this->validarPosicion($posicionX, self::MIN_POSICION_X, self::MAX_POSICION_X);
@@ -36,21 +22,11 @@ class Monstruo {
         
         self::$numMonstruosTotales++;
         self::$numMonstruosVivos++;
-    }
 
-    /**
-     * Valida que la posición esté dentro de los límites permitidos.
-     *
-     * @param int $posicion
-     * @param int $min
-     * @param int $max
-     * @return int
-     */
     private function validarPosicion($posicion, $min, $max) {
         return max($min, min($max, $posicion));
     }
 
-    // Métodos getters
     public function getNombre() {
         return $this->nombre;
     }
@@ -79,7 +55,6 @@ class Monstruo {
         return self::$numMonstruosVivos;
     }
 
-    // Métodos setters
     public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
@@ -96,9 +71,7 @@ class Monstruo {
         $this->color = $color;
     }
 
-    /**
-     * Método para matar al monstruo
-     */
+
     public function muere() {
         if ($this->vivo) {
             $this->vivo = false;
@@ -106,14 +79,6 @@ class Monstruo {
         }
     }
 
-    /**
-     * Método para desplazar al monstruo
-     *
-     * @param int $unidadesX
-     * @param int $unidadesY
-     * @param bool $derecha
-     * @param bool $arriba
-     */
     public function desplazarse($unidadesX, $unidadesY, $derecha, $arriba) {
         $this->posicionX += $derecha ? $unidadesX : -$unidadesX;
         $this->posicionY += $arriba ? $unidadesY : -$unidadesY;
@@ -122,18 +87,12 @@ class Monstruo {
         $this->posicionY = $this->validarPosicion($this->posicionY, self::MIN_POSICION_Y, self::MAX_POSICION_Y);
     }
 
-    /**
-     * Método toString para representar al monstruo como cadena
-     *
-     * @return string
-     */
     public function __toString() {
         $estado = $this->vivo ? "vivo" : "muerto";
         return "El monstruo {$this->nombre} está en la posición ({$this->posicionX}, {$this->posicionY}), es de color {$this->color} y está {$estado}.";
     }
 }
 
-// Enumerado de colores
 class Colores {
     const BLANCO = "blanco";
     const ROSA = "rosa";
@@ -143,9 +102,7 @@ class Colores {
     const VERDE = "verde";
 }
 
-/**
- * Clase para probar la funcionalidad de la clase Monstruo
- */
+
 class PruebaMonstruo {
     private $monstruos = [];
 
@@ -308,7 +265,6 @@ class PruebaMonstruo {
     }
 }
 
-// Ejecución de la prueba
 $prueba = new PruebaMonstruo();
 $prueba->menu();
 ?>

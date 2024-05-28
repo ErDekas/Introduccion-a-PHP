@@ -1,0 +1,16 @@
+15 jugadores
+Juan 3 Pelucas
+Pepe 4 Gigante
+Jose 10 Tortuga
+Antonio 14 Lloron
+Pedro 20 Fuerte
+Manuel 19 Cabeza
+Raul 34 Rubio
+Miguel 25 Moreno
+David 11 Largo
+Alvaro 29 Patoso
+Ricardo 33 Capulta
+Marcos 8 Quejica
+Francisco 11 Borracho
+Pablo 2 Empanao
+Roberto 1 Jefe
